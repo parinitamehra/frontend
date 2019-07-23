@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <script>
+        function validate()
+        {
+            var username=document.f1.uname.value;
+            var password1=document.f1.pass1.value;
+            var password2= document.f1.pass2.value;
+            if(username!=""&&password1!=""&&password2!="")
+            {
+                document.write("welcome"+username);
+            
+            
+            if(password1==password2)
+            {
+             window.alert("they match");
+            }
+        
+            else
+            {
+                window.alert("invalid");
+            }
+        }
+        else
+        {
+            alert("Error: Username cannot be blank!");
+        }
+
+        }
+        </script>
+</head>
+<body>
+<form name="f1" onsubmit="validate()">
+    <input type="text" name="uname">
+        <input type="password" name="pass1">
+        <input type="password" name="pass2">
+<input type="submit" value="compare">
+</form>
+
+</body>
+</html>

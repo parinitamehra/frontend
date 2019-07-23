@@ -1,0 +1,26 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+        function MyFunction()
+        {
+            
+           
+            var a = prompt("Please enter 1st number", "<no. 1 goes here>");
+                    var b=prompt("Please enter 2nd number", "<no. 2 goes here>");
+var c= a+b;
+if (a!= 0&&b!=0) {
+
+    document.getElementById("welcome").innerHTML =
+
+    "sum of " + a + " and " +b+ "is " +c ;
+        }
+        }
+        </script>
+
+        <button style="border:2px solid #4CAF50;border-radius: 50%; padding: 10px 30px" onclick="MyFunction()">Add</button>
+        <p id="welcome" ></p>
+    </body>
+</html>

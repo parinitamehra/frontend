@@ -1,0 +1,171 @@
+<html>
+    <head>
+        <center>
+        <h1>Register</h1>
+        <style>
+        p{
+            color:firebrick;
+            font-style: italic;
+        }
+        input
+        {
+            border-color: crimson;
+            border-radius: 2px;
+            border-style: double;
+        }
+        </style>
+    </center>
+    <hr size="2" width="50%" color="darkkhaki">
+    </head>
+    <body bgcolor="papayawhip" >
+       <center>
+            <form>
+                    <table cellpadding="8" cellspacing="2" >
+                       <caption><h3>Enter details</h3></caption>
+                            <tr> <td> Username  </td> <td><input type="text" id="uname" placeholder="enter username" onkeyup="validUsername()"  required></td>
+                                <td><p id="p1"></p></td></tr>
+                            <tr> <td>         Password</td>  <td><input type="password" id="pass1" placeholder="enter password" onkeyup="validPass1()" required></td>
+                                <td><p id="p2"></p></td></tr>
+                            <tr> <td>    Re-enter password</td><td><input type="password" id="pass2" placeholder="re-enter password" onkeyup="validPass2()" required>
+                                <td><p id="p3"></p></td></td></tr>
+                                <tr> <td>  Email</td><td><input type="email" id="email" placeholder="Enter email" onkeyup="validEmail()" required></td>
+                                <td><p id= "p4"> </p>  </td>
+                                </tr>   
+                            <tr> <td>   DOB</td><td><input type="date" id="dob" placeholder="dd/mm/yy" onchange="dateVal()"></td>
+                                <td><p id="p6"></p></td>
+                            </tr>
+        <tr> <td> Gender:</td></tr>
+        <tr> <td>    <input type="radio" id="same" name="one "value="male" checked>Male</td></tr>
+        <tr> <td>     <input type="radio"  id="same" name="one " value="female">Female</td></tr>
+        <tr> <td>      <input type="radio"  id="same" name="one " value="others">Others</td></tr>
+        <tr> <td>Languages known</td>
+            <td><input type="checkbox" name="one1 " value="English">English
+                 <input type="checkbox" name="one1 " value="Hindi">Hindi
+                    <input type="checkbox" name="one1 " value="tamil">Tamil</td></tr>
+<tr> <td>Mobile number</td>
+    <td><input type="tel" length="10" name ="phone" id= "phn" placeholder="mobile no." onkeyup="mobileNo()" required></td>
+    <td><p id="p5"></p></td></tr>
+<tr> <td>Upload</td><td><input type="file" placeholder="choose a file"></td></tr>
+<tr> <td>Favourite color </td>  <td><input type="color" required></td></tr>
+<tr> <td> Download</td> <td><button><a href ="Task1.pdf" text="red">Download File</button></td></tr>
+<tr> <td>Qualification </td> <td><select>
+    <option>grad</option>
+    <option>post grad</option>
+    <option>ph.d</option>
+</select></td>
+
+</tr>
+<tr>
+<td>
+<input type="submit" value="register" text="green" onclick="login.html" >
+<input type="reset" value="clear">
+<input type="submit" value="download"</td>
+</tr>
+</table>            
+</form>
+</center>   
+<script>
+// function usernameCase()
+// {
+//     var x=document.getElementById("uname").value;
+//     var y=x.toUpperCase();
+//     document.getElementById("p1").innerHTML=""
+
+// }
+function validUsername()
+{
+    var x= document.getElementById("uname").value;
+    if(x.length<6)
+    {
+        document.getElementById("p1").style.color="red";
+        document.getElementById("p1").innerHTML="invalid";
+    }
+    else
+    {
+        document.getElementById("p1").style.color="green";
+        document.getElementById("p1").innerHTML="valid";
+    }
+}
+function validPass2()
+{
+    var pass2= document.getElementById("pass2").value;
+    var pass1=document.getElementById("pass1").value;
+    if(pass1!=pass2)
+    {
+        document.getElementById("p3").style.color="red";
+        document.getElementById("p3").innerHTML="password dosen't match";
+    }
+    else
+    {
+        document.getElementById("p3").style.color="green";
+        document.getElementById("p3").innerHTML="valid";
+    }
+}
+function validPass1()
+{
+    var pass1=document.getElementById("pass1").value;
+    var patt="[a-zA-Z0-9]{8}";
+    if(pass1.match(patt))
+    {
+        document.getElementById("p2").style.color="green";
+        document.getElementById("p2").innerHTML="valid";
+    }
+    else
+    {
+        document.getElementById("p2").style.color="red";
+        document.getElementById("p2").innerHTML="invalid";
+    }
+}
+function validEmail()
+        {
+            var x=document.getElementById("email").value;
+            var atposition=x.indexOf("@");
+            var dotposition=x.lastIndexOf(".");
+            if(atposition<1 || dotposition<atposition+2||dotposition+2>=x.length)
+                {
+                    document.getElementById("p4").style.color="red";
+                    document.getElementById("p4").innerHTML="invalid";
+                   
+                }
+                else{
+                    document.getElementById("p4").style.color="green";
+                   var col= document.getElementById("p4").innerHTML="valid";
+col.style.color="green";
+                }
+        }
+function mobileNo()
+{
+    var phn=document.getElementById("phn").value;
+    var check=/[6,7,8,9]+[0-9]{9}/;
+    if(phn.match(check))
+    {
+        document.getElementById("p5").style.color="green";
+        document.getElementById("p5").innerHTML="valid";
+    }
+    else
+    {
+        document.getElementById("p5").style.color="red";
+        document.getElementById("p5").innerHTML="invalid";
+    }
+}
+function dateVal()
+{
+    var da=document.getElementById("dob").value;
+    var date=new Date(da);
+    var year=Number(date.getFullYear());
+
+    var dd=2000;
+    if(year>=dd)
+    {
+        document.getElementById("p6").style.color="red";
+        document.getElementById("p6").innerHTML="invalid";
+    }
+    else
+    {
+        document.getElementById("p6").style.color="green";
+        document.getElementById("p6").innerHTML="valid";
+    }
+}
+</script>  
+    </body>
+</html>

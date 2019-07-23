@@ -1,0 +1,21 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p id="demo" >js to change style</p>
+        <button type="button" onclick="myFunction()">Click Me</button>
+        <script>
+        function myFunction()
+        {
+            var x=document.getElementById('demo');
+            x.style.color="red";
+            x.style.fontFamily="Arial,Helvitica";
+            x.style.fontSize="50px";
+            x.style.fontStyle="italic";
+            x.style.textShadow="10px 10px 10px #0000ff";
+            document.getElementsByTagName("BODY")[0].style.backgroundColor = "khaki";
+        }
+        </script>
+    </body>
+</html>

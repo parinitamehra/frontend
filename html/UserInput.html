@@ -1,0 +1,30 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+        function MyFunction()
+        {
+            
+           
+            var a = document.f1.num1.value;
+                    var b=document.f1.num1.value;
+var c=parseInt(a) + parseInt(b);
+if (a!= 0&&b!=0) {
+
+    document.getElementById("welcome").innerHTML =
+
+    "sum of " + a + " and " +b+ "is " +c ;
+        }
+        }
+        </script>
+<form name="f1" onsubmit="MyFunction()">
+        <input type="text" name="num1">
+        <input type="number" name="num2">
+<input type="submit" value="addition">
+        <!-- <button style="border:2px solid #4CAF50;border-radius: 50%; padding: 10px 30px" onclick="MyFunction()">Add</button> -->
+         <p id="welcome" ></p>
+    </form>
+    </body>
+</html>

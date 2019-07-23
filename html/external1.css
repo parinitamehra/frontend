@@ -1,0 +1,18 @@
+#one
+{
+    color:red;
+    text-align: center;
+    text-size-adjust:"20"; 
+}
+#one:hover
+{
+    color:blueviolet;
+}
+.c1
+{
+    text-decoration:underline;
+}
+.c2
+{
+    text-align: right;
+}
